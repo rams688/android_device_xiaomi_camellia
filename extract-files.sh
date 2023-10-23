@@ -90,6 +90,9 @@ function blob_fixup {
 	vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so)
             "${PATCHELF}" --replace-needed "libsensorndkbridge.so" "libsensorndkbridge-v30.so" "${2}"
             ;;
+    vendor/bin/hw/camerahalserver)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            "${PATCHELF}" --replace-needed "libbinder.so" "libbinder-v32.so" "${2}"
     esac
 }
 
