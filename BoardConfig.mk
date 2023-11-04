@@ -140,8 +140,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # SELinux
+SELINUX_IGNORE_NEVERALLOWS := true
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2023-09-01
